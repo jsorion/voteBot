@@ -23,11 +23,11 @@ const puppeteer = require('puppeteer');
 	await page.click('input#' + answerId);
 	console.log('Answer chosen.');
 
-	await page.waitForSelector('#stage-inner > div.grid > div > form > div:nth-child(2) > div > div.l-link > a');
-	await page.click('#stage-inner > div.grid > div > form > div:nth-child(2) > div > div.l-link > a');
+	await page.waitForSelector('a.vote-button.css-vote-button.pds-vote-button');
+	await page.click('a.vote-button.css-vote-button.pds-vote-button');
 	console.log('Voted.');
 
-	await page.waitForSelector('#stage-inner > div.grid > div > form > div.poll > h1');
+	//await page.waitForSelector('#stage-inner > div.grid > div > form > div.poll > h1');
 	console.log("Results page opened. I'll close the browser.");
 
 	await browser.close();
